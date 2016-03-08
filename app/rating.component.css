@@ -1,0 +1,27 @@
+#rating {
+    display: block;
+}
+
+.stars {
+    list-style-type: none;
+    padding:0; 
+    margin:0;
+}
+
+.stars li {
+    cursor: pointer;
+    position: relative;
+    left: 0;
+}
+
+.visible {
+    display:block;
+}
+
+.invisible {
+    display:none;
+}
+
+.right {
+    float:left;
+}

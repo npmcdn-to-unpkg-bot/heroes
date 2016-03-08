@@ -1,0 +1,27 @@
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="#hero of heroes" [class.selected]="hero === selectedHero">
+      <div (click)="onSelect(hero)" style="display: block;">
+          <span class="right" style="width:200px">{{hero.name}} ({{hero.rating}})</span>
+          <my-rating class="right" [rating]="hero.rating" (onChanged)="onChangeRating(hero, $event)"></my-rating>
+          <img alt="Delete" title="Delete" src="app/delete-16.ico" style="margin:2px 25px" (click)="delete(hero)">
+      </div>
+  </li>
+</ul>
+
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">Edit Details</button>
+
+<input type="button" (click)="onDeselect()" value="Deselect">
+</div>
+
+<div *ngIf="selectedHero == null">
+
+  <input type="text" #newHero maxlength="20" >
+  <button (click)="addHero(newHero.value); newHero.value = ''">Add</button>
+
+</div>

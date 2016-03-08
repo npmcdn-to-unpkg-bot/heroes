@@ -1,0 +1,12 @@
+
+<div *ngIf="hero">
+  <h2>{{hero.name}} details</h2>
+  <div><label>id: </label>{{hero.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name" (ngModelChange)="onNameChanged()"/>
+  </div>
+  <div><label>rating: </label>{{hero.rating}} <my-rating [rating]="hero.rating" (onChanged)="onRatingChanged($event)"></my-rating></div>
+  <button [disabled]="isUnChanged" [class.disabled]="isUnChanged" (click)="updateHero()">Save</button>
+  <button (click)="goBack()">Back</button>
+</div>
