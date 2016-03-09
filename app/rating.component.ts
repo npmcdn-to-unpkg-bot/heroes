@@ -14,7 +14,7 @@ export class RatingComponent implements OnInit {
     public stars: Star[]; 
     public rating: number;
     @Output() onChanged = new EventEmitter<number>();
-    public starImageSrc: string = 'app/star_silver.JPG';
+    public starImageSrc: string = 'app/star_silver.png';
     
     ngOnInit() {
         this.stars = 
@@ -37,10 +37,10 @@ export class RatingComponent implements OnInit {
             if (i <= idx) 
             { 
                 s.selected = true;
-                s.src = 'app/star_gold.JPG';
+                s.src = 'app/star_gold.png';
             } else {
                 s.selected = false;
-                s.src = 'app/star_silver.JPG';
+                s.src = 'app/star_silver.png';
             }
         });
         this.rating =  idx+1;
